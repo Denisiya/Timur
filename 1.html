@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Тимурка</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      height: 100vh;
+      width: 100vw;
+      background-image: url("https://img.freepik.com/premium-vector/pink-seamless-pattern-with-hearts-stripes_197792-148.jpg");
+      background-repeat: repeat;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      font-family: sans-serif;
+    }
+
+    .image-container {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .image-container img {
+      max-width: 300px;
+      height: auto;
+      display: block;
+      margin: 0 auto;
+    }
+
+    .caption {
+      font-size: 24px;
+      margin-top: 10px;
+      color: #333;
+    }
+
+    .button-container {
+      display: flex;
+      gap: 40px;
+      z-index: 1;
+      justify-content: center;
+      margin-top: 20px;
+    }
+
+    button {
+      padding: 12px 25px;
+      font-size: 16px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+
+
+
+
+    .yes-btn {
+  display: inline-block;
+  background-color: transparent;
+  border: 5px solid #C84153;
+  padding: 10px 20px;
+  border-radius: 8px;
+  text-decoration: none;
+  color: black;
+  transform: translateX(-80px);
+}
+
+
+    .no-btn {
+        background-color: transparent;
+        color: black;
+        border: 5px solid #C84153;
+        position: absolute;
+        left: 50%; /* Ставим правее кнопки "Да" */
+        transition: top 0.3s ease, left 0.3s ease;
+    }
+
+
+
+  </style>
+</head>
+<body>
+
+  <!-- Гифка и текст -->
+  <div class="image-container">
+    <img src="C:\Users\malik\OneDrive\Desktop\Тимурка\10809201555448063-unscreen.gif" alt="котик">
+    <p class="caption">Любишь меня?</p>
+  </div>
+
+  <!-- Кнопка Да -->
+  <div class="button-container">
+    <a href="C:\Users\malik\OneDrive\Desktop\Тимурка\2.html" class="yes-btn">Да</a>
+
+    <button class="no-btn" id="noBtn" >Нет</button>
+  </div>
+
+
+
+  <!-- Скрипт -->
+  <script>
+    const noBtn = document.getElementById('noBtn');
+
+    noBtn.addEventListener('mouseover', () => {
+      const btnWidth = noBtn.offsetWidth;
+      const btnHeight = noBtn.offsetHeight;
+      const padding = 20;
+
+      const maxX = window.innerWidth - btnWidth - padding;
+      const maxY = window.innerHeight - btnHeight - padding;
+
+      const randomX = Math.floor(Math.random() * maxX);
+      const randomY = Math.floor(Math.random() * maxY);
+
+      noBtn.style.left = `${randomX}px`;
+      noBtn.style.top = `${randomY}px`;
+    });
+
+    // Чтобы нельзя было нажать
+    noBtn.addEventListener('click', (e) => {
+      e.preventDefault();
+    });
+  </script>
+
+</body>
+</html>
